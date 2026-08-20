@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>La Scuola del Faro</title>
+
+<meta name="description" content="La Scuola del Faro – educazione, innovazione e progettazione per la scuola primaria.">
+
+<style>
+:root {
+    --blu: #102a43;
+    --blu-chiaro: #1f4e79;
+    --oro: #d6a84f;
+    --crema: #f7f4ed;
+    --bianco: #ffffff;
+    --testo: #243b53;
+    --azzurro: #dceef7;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--testo);
+    background: var(--crema);
+    line-height: 1.6;
+}
+
+/* NAVIGAZIONE */
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(16, 42, 67, 0.96);
+    padding: 15px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: var(--bianco);
+    font-size: 1.3rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: var(--oro);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+nav a:hover {
+    color: var(--oro);
+}
+
+/* HERO */
+
+.hero {
+    min-height: 100vh;
+    background:
+        linear-gradient(rgba(10, 31, 52, 0.82), rgba(10, 31, 52, 0.82)),
+        radial-gradient(circle at center, #315d7d, #102a43);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 100px 20px 60px;
+}
+
+.hero-content {
+    max-width: 900px;
+}
+
+.faro {
+    font-size: 4rem;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: clamp(2.5rem, 7vw, 5rem);
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.hero h1 span {
+    color: var(--oro);
+}
+
+.hero p {
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    max-width: 720px;
+    margin: 0 auto 35px;
+}
+
+.button {
+    display: inline-block;
+    background: var(--oro);
+    color: var(--blu);
+    padding: 14px 28px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 5px;
+    transition: 0.3s;
+}
+
+.button:hover {
+    transform: translateY(-3px);
+    background: white;
+}
+
+/* SEZIONI */
+
+section {
+    padding: 90px 8%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title h2 {
+    color: var(--blu);
+    font-size: 2.3rem;
+    margin-bottom: 12px;
+}
+
+.section-title p {
+    max-width: 700px;
+    margin: auto;
+}
+
+/* VISIONE */
+
+.vision {
+    background: white;
+}
+
+.vision-content {
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+    font-size: 1.15rem;
+}
+
+.faro-quote {
+    margin: 35px auto;
+    padding: 30px;
+    border-left: 5px solid var(--oro);
+    background: var(--crema);
+    font-size: 1.3rem;
+    font-style: italic;
+}
+
+/* CARDS */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 25px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(16, 42, 67, 0.08);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    color: var(--blu);
+    margin-bottom: 12px;
+}
+
+/* METODOLOGIE */
+
+.method {
+    background: var(--azzurro);
+}
+
+.method-list {
+    max-width: 1000px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 18px;
+}
+
+.method-item {
+    background: white;
+    padding: 22px;
+    border-radius: 12px;
+    border-top: 4px solid var(--oro);
+}
+
+.method-item strong {
+    color: var(--blu);
+}
+
+/* PROGETTI */
+
+.projects {
+    background: white;
+}
+
+.project-card {
+    overflow: hidden;
+    padding: 0;
+}
+
+.project-top {
+    background: var(--blu);
+    color: white;
+    padding: 25px;
+}
+
+.project-body {
+    padding: 25px;
+}
+
+/* CONTATTI */
+
+.contact {
+    background: var(--blu);
+    color: white;
+    text-align: center;
+}
+
+.contact h2 {
+    color: white;
+}
+
+.contact p {
+    max-width: 700px;
+    margin: 0 auto 25px;
+}
+
+/* FOOTER */
+
+footer {
+    background: #081b2d;
+    color: #d9e2ec;
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 0.9rem;
+}
+
+footer span {
+    color: var(--oro);
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav ul {
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero {
+        padding-top: 150px;
+    }
+
+    section {
+        padding: 65px 6%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">LA SCUOLA DEL <span>FARO</span></div>
+
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#visione">La visione</a></li>
+        <li><a href="#metodo">Il metodo</a></li>
+        <li><a href="#progetti">Progetti</a></li>
+        <li><a href="#contatti">Contatti</a></li>
+    </ul>
+</nav>
+
+
+<!-- HERO -->
+
+<header class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="faro">◉</div>
+
+        <h1>
+            La Scuola del <span>Faro</span>
+        </h1>
+
+        <p>
+            Educazione, innovazione e progettazione
+            per una scuola primaria capace di orientare,
+            accogliere e far crescere ogni bambino.
+        </p>
+
+        <a href="#visione" class="button">
+            Scopri il progetto
+        </a>
+
+    </div>
+
+</header>
+
+
+<!-- VISIONE -->
+
+<section class="vision" id="visione">
+
+    <div class="section-title">
+
+        <h2>La nostra visione</h2>
+
+        <p>
+            Una scuola che non indica semplicemente una strada,
+            ma aiuta ogni bambino a trovare la propria.
+        </p>
+
+    </div>
+
+    <div class="vision-content">
+
+        <p>
+            Il faro illumina senza imporre la rotta.
+            Offre sicurezza, orientamento e possibilità.
+        </p>
+
+        <div class="faro-quote">
+            “Essere un punto di riferimento,
+            illuminare la strada e rendere possibile
+            a ciascuno trovare il proprio cammino.”
+        </div>
+
+        <p>
+            La Scuola del Faro nasce da questa idea:
+            costruire esperienze di apprendimento significative,
+            inclusive e autentiche, nelle quali il bambino
+            sia protagonista del proprio percorso.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- COSA FACCIAMO -->
+
+<section id="metodo">
+
+    <div class="section-title">
+
+        <h2>Come insegniamo</h2>
+
+        <p>
+            Metodologie attive, progettazione intenzionale
+            e attenzione alle differenze individuali.
+        </p>
+
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="card-icon">🧭</div>
+            <h3>Progettazione a ritroso</h3>
+            <p>
+                Partiamo dalla destinazione:
+                ciò che vogliamo che gli alunni sappiano
+                fare, comprendere e trasferire.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">💡</div>
+            <h3>Apprendimento attivo</h3>
+            <p>
+                Laboratori, problemi autentici,
+                missioni, ricerca, gioco e situazioni
+                reali rendono l'apprendimento significativo.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">🤝</div>
+            <h3>Cooperazione</h3>
+            <p>
+                Cooperative learning, peer tutoring
+                e attività collaborative permettono
+                ai bambini di imparare insieme.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">🌱</div>
+            <h3>Inclusione</h3>
+            <p>
+                Progettiamo fin dall'inizio molteplici
+                possibilità di accesso, partecipazione
+                ed espressione.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- METODOLOGIE -->
+
+<section class="method">
+
+    <div class="section-title">
+
+        <h2>Le nostre metodologie</h2>
+
+        <p>
+            Una cassetta degli attrezzi ampia,
+            scelta in funzione degli obiettivi.
+        </p>
+
+    </div>
+
+    <div class="method-list">
+
+        <div class="method-item">
+            <strong>Metodo analogico</strong><br>
+            Per costruire concetti matematici attraverso
+            immagini, analogie e intuizione.
+        </div>
+
+        <div class="method-item">
+            <strong>UDL</strong><br>
+            Multiple possibilità di engagement,
+            accesso, azione ed espressione.
+        </div>
+
+        <div class="method-item">
+            <strong>Flipped Classroom</strong><br>
+            Il tempo a scuola diventa spazio per
+            applicare, discutere e collaborare.
+        </div>
+
+        <div class="method-item">
+            <strong>Gamification</strong><br>
+            Missioni, sfide narrative e sistemi di
+            progressione per aumentare il coinvolgimento.
+        </div>
+
+        <div class="method-item">
+            <strong>Cooperative Learning</strong><br>
+            Il gruppo diventa una risorsa per
+            costruire conoscenze e competenze.
+        </div>
+
+        <div class="method-item">
+            <strong>Jigsaw</strong><br>
+            Ogni bambino possiede una parte importante
+            della conoscenza e contribuisce al risultato.
+        </div>
+
+        <div class="method-item">
+            <strong>Hocus & Lotus</strong><br>
+            Un approccio narr
